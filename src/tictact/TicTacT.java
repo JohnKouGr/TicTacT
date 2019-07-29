@@ -271,9 +271,11 @@ public class TicTacT {
         
         if("y".equals(TicTacT.pvp)){
             
+            checkWinCheckOnly();
+            
         // Local variable to run loop
         boolean loop = true;
-
+       
             System.out.println("IT'S PLAYER'S TWO TURN!");
         
         drawBoard();
@@ -292,6 +294,7 @@ public class TicTacT {
                     if (TicTacT.place[0] == '_') {
 
                         TicTacT.place[0] = TicTacT.opp;
+                        checkWinCheckOnly();
                         loop = false;
 
                     } else if (TicTacT.place[0] == TicTacT.team) {
@@ -307,6 +310,7 @@ public class TicTacT {
                     if (TicTacT.place[1] == '_') {
 
                         TicTacT.place[1] = TicTacT.opp;
+                        checkWinCheckOnly();
                         loop = false;
 
                     } else if (TicTacT.place[1] == TicTacT.team) {
@@ -321,6 +325,7 @@ public class TicTacT {
                     if (TicTacT.place[2] == '_') {
 
                         TicTacT.place[2] = TicTacT.opp;
+                        checkWinCheckOnly();
                         loop = false;
 
                     } else if (TicTacT.place[2] == TicTacT.team) {
@@ -335,6 +340,7 @@ public class TicTacT {
                     if (TicTacT.place[3] == '_') {
 
                         TicTacT.place[3] = TicTacT.opp;
+                        checkWinCheckOnly();
                         loop = false;
 
                     } else if (TicTacT.place[3] == TicTacT.team) {
@@ -349,6 +355,7 @@ public class TicTacT {
                     if (TicTacT.place[4] == '_') {
 
                         TicTacT.place[4] = TicTacT.opp;
+                        checkWinCheckOnly();
                         loop = false;
 
                     } else if (TicTacT.place[4] == TicTacT.team) {
@@ -363,6 +370,7 @@ public class TicTacT {
                     if (TicTacT.place[5] == '_') {
 
                         TicTacT.place[5] = TicTacT.opp;
+                        checkWinCheckOnly();
                         loop = false;
 
                     } else if (TicTacT.place[5] == TicTacT.team) {
@@ -377,6 +385,7 @@ public class TicTacT {
                     if (TicTacT.place[6] == '_') {
 
                         TicTacT.place[6] = TicTacT.opp;
+                        checkWinCheckOnly();
                         loop = false;
 
                     } else if (TicTacT.place[6] == TicTacT.team) {
@@ -391,6 +400,7 @@ public class TicTacT {
                     if (TicTacT.place[7] == '_') {
 
                         TicTacT.place[7] = TicTacT.opp;
+                        checkWinCheckOnly();
                         loop = false;
 
                     } else if (TicTacT.place[7] == TicTacT.team) {
@@ -405,6 +415,7 @@ public class TicTacT {
                     if (TicTacT.place[8] == '_') {
 
                         TicTacT.place[8] = TicTacT.opp;
+                        checkWinCheckOnly();
                         loop = false;
 
                     } else if (TicTacT.place[8] == TicTacT.team) {
@@ -737,10 +748,105 @@ public class TicTacT {
             playAgain();
             System.out.println("\n\n");
             
-        // if no tie then start game.
+        // if no tie then start game by player move
         }
         else{
             playerMove();
+        }
+
+    }
+    
+        public static void checkWinCheckOnly() {
+        
+        // decide to pvp or not to
+        if("_".equals(TicTacT.pvp)){
+        pvpOrPve();
+        }
+        
+        //See if X has won the game
+        if ((TicTacT.place[0] == 'X') && (TicTacT.place[1] == 'X') && (TicTacT.place[2] == 'X')) {
+            System.out.println("\n\n\n\tX WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+        } else if ((TicTacT.place[3] == 'X') && (TicTacT.place[4] == 'X') && (TicTacT.place[5] == 'X')) {
+            System.out.println("\n\n\n\tX WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+        } else if ((TicTacT.place[6] == 'X') && (TicTacT.place[7] == 'X') && (TicTacT.place[8] == 'X')) {
+            System.out.println("\n\n\n\tX WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+        } else if ((TicTacT.place[0] == 'X') && (TicTacT.place[4] == 'X') && (TicTacT.place[8] == 'X')) {
+            System.out.println("\n\n\n\tX WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+        } else if ((TicTacT.place[1] == 'X') && (TicTacT.place[4] == 'X') && (TicTacT.place[7] == 'X')) {
+            System.out.println("\n\n\n\tX WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+        } else if ((TicTacT.place[2] == 'X') && (TicTacT.place[4] == 'X') && (TicTacT.place[6] == 'X')) {
+            System.out.println("\n\n\n\tX WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+        } else if ((TicTacT.place[0] == 'X') && (TicTacT.place[3] == 'X') && (TicTacT.place[6] == 'X')) {
+            System.out.println("\n\n\n\tX WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+        } else if ((TicTacT.place[2] == 'X') && (TicTacT.place[5] == 'X') && (TicTacT.place[8] == 'X')) {
+            System.out.println("\n\n\n\tX WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+        }
+        //Now, see if O won
+        if ((TicTacT.place[0] == 'O') && (TicTacT.place[1] == 'O') && (TicTacT.place[2] == 'O')) {
+            System.out.println("\n\n\n\tO WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+        } else if ((TicTacT.place[3] == 'O') && (TicTacT.place[4] == 'O') && (TicTacT.place[5] == 'O')) {
+            System.out.println("\n\n\n\tO WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+        } else if ((TicTacT.place[6] == 'O') && (TicTacT.place[7] == 'O') && (TicTacT.place[8] == 'O')) {
+            System.out.println("\n\n\n\tO WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+        } else if ((TicTacT.place[0] == 'O') && (TicTacT.place[4] == 'O') && (TicTacT.place[8] == 'O')) {
+            System.out.println("\n\n\n\tO WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+        } else if ((TicTacT.place[1] == 'O') && (TicTacT.place[4] == 'O') && (TicTacT.place[7] == 'O')) {
+            System.out.println("\n\n\n\tO WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+        } else if ((TicTacT.place[2] == 'O') && (TicTacT.place[4] == 'O') && (TicTacT.place[6] == 'O')) {
+            System.out.println("\n\n\n\tO WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+        } else if ((TicTacT.place[0] == 'O') && (TicTacT.place[3] == 'O') && (TicTacT.place[6] == 'O')) {
+            System.out.println("\n\n\n\tO WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+        } else if ((TicTacT.place[2] == 'O') && (TicTacT.place[5] == 'O') && (TicTacT.place[8] == 'O')) {
+            System.out.println("\n\n\n\tO WINS!!!");
+            drawBoard();
+            playAgain();
+            System.out.println("\n\n");
+            
         }
 
     }

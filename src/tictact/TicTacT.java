@@ -100,6 +100,9 @@ public class TicTacT {
     
     public static void playerMove(){
         
+        // for avoiding debug
+//        System.out.println("player move");
+        
         // Local variable to run loop
         boolean loop = true;
 
@@ -269,6 +272,9 @@ public class TicTacT {
     
     public static void oppMove() {
         
+        // for avoiding debug
+//        System.out.println("opp move");
+        
         if("y".equals(TicTacT.pvp)){
             
             checkWinCheckOnly();
@@ -436,13 +442,21 @@ public class TicTacT {
         }
 
        else if("n".equals(TicTacT.pvp)){
+           
+           checkWinCheckOnly();
         
         while (true) {
+            
+            // for avoiding debug
+//            System.out.println("opp move pvp n");
 
             if ((TicTacT.place[0] == '_') || (TicTacT.place[1] == '_') || (TicTacT.place[2] == '_') || (TicTacT.place[3] == '_') || (TicTacT.place[4] == '_') || (TicTacT.place[5] == '_') || (TicTacT.place[6] == '_') || (TicTacT.place[7] == '_') || (TicTacT.place[8] == '_')) {
 
                 //Potential winning moves for opp
                 if (TicTacT.place[0] != TicTacT.team && TicTacT.place[1] != TicTacT.team && TicTacT.place[2] != TicTacT.team) {
+                    
+                    // for avoiding debug
+                    System.out.println("first choice");
                     
                     int x = rng(0,2);
                 
@@ -461,6 +475,9 @@ public class TicTacT {
 
             } else if (TicTacT.place[3] != TicTacT.team && TicTacT.place[4] != TicTacT.team && TicTacT.place[5] != TicTacT.team){
                 
+                // for avoiding debug
+                    System.out.println("second choice");
+                
                     int x = rng(3,5);
                 
                 if(TicTacT.place[x] == '_'){
@@ -478,6 +495,9 @@ public class TicTacT {
             
             } else if (TicTacT.place[6] != TicTacT.team && TicTacT.place[7] != TicTacT.team && TicTacT.place[8] != TicTacT.team){
                 
+                // for avoiding debug
+                    System.out.println("third choice");
+                
                 int x = rng(6,8);
                 
                 if(TicTacT.place[x] == '_'){
@@ -494,6 +514,9 @@ public class TicTacT {
                 }
             
             } else if (TicTacT.place[0] != TicTacT.team && TicTacT.place[4] != TicTacT.team && TicTacT.place[8] != TicTacT.team){
+                
+                // for avoiding debug
+                    System.out.println("fourth choice");
                 
                 int x = rng(0,8);
                 
@@ -515,10 +538,24 @@ public class TicTacT {
                     checkWin();
                     break;
                     
+                } else{ if(TicTacT.place[0] == '_'){
+                    TicTacT.place[0] = TicTacT.opp;
+                    break;
+                } else if(TicTacT.place[4] == '_'){
+                    TicTacT.place[4] = TicTacT.opp;
+                    break;
+                } else if(TicTacT.place[8] == '_'){
+                    TicTacT.place[8] = TicTacT.opp;
+                    break;
                 }
+                }
+                
             } else if (TicTacT.place[1] != TicTacT.team && TicTacT.place[4] != TicTacT.team && TicTacT.place[7] != TicTacT.team){
                 
-                int x = rng(0,8);
+                // for avoiding debug
+                    System.out.println("fifth choice");
+                
+                int x = rng(1,7);
                 
                 if (TicTacT.place[1] == '_' && TicTacT.place[1] == x){
                 
@@ -538,10 +575,23 @@ public class TicTacT {
                     checkWin();
                     break;
                     
+                                } else{ if(TicTacT.place[1] == '_'){
+                    TicTacT.place[1] = TicTacT.opp;
+                    break;
+                } else if(TicTacT.place[4] == '_'){
+                    TicTacT.place[4] = TicTacT.opp;
+                    break;
+                } else if(TicTacT.place[7] == '_'){
+                    TicTacT.place[7] = TicTacT.opp;
+                    break;
+                }
                 }
             } else if (TicTacT.place[2] != TicTacT.team && TicTacT.place[4] != TicTacT.team && TicTacT.place[6] != TicTacT.team){
                 
-                int x = rng(0,8);
+                // for avoiding debug
+                    System.out.println("sixth choice");
+                
+                int x = rng(2,6);
                 
                 if (TicTacT.place[2] == '_' && TicTacT.place[2] == x){
                 
@@ -561,10 +611,23 @@ public class TicTacT {
                     checkWin();
                     break;
                     
+                                } else{ if(TicTacT.place[2] == '_'){
+                    TicTacT.place[2] = TicTacT.opp;
+                    break;
+                } else if(TicTacT.place[4] == '_'){
+                    TicTacT.place[4] = TicTacT.opp;
+                    break;
+                } else if(TicTacT.place[6] == '_'){
+                    TicTacT.place[6] = TicTacT.opp;
+                    break;
+                }
                 }
             } else if (TicTacT.place[0] != TicTacT.team && TicTacT.place[3] != TicTacT.team && TicTacT.place[6] != TicTacT.team){
                 
-                int x = rng(0,8);
+                // for avoiding debug
+                    System.out.println("seventh choice");
+                
+                int x = rng(0,6);
                 
                 if (TicTacT.place[0] == '_' && TicTacT.place[0] == x){
                 
@@ -584,10 +647,23 @@ public class TicTacT {
                     checkWin();
                     break;
                     
+                                } else{ if(TicTacT.place[0] == '_'){
+                    TicTacT.place[0] = TicTacT.opp;
+                    break;
+                } else if(TicTacT.place[3] == '_'){
+                    TicTacT.place[3] = TicTacT.opp;
+                    break;
+                } else if(TicTacT.place[6] == '_'){
+                    TicTacT.place[6] = TicTacT.opp;
+                    break;
+                }
                 }
             } else if (TicTacT.place[2] != TicTacT.team && TicTacT.place[5] != TicTacT.team && TicTacT.place[8] != TicTacT.team){
                 
-                int x = rng(0,8);
+                // for avoiding debug
+                    System.out.println("eighth choice");
+                
+                int x = rng(2,8);
                 
                 if (TicTacT.place[2] == '_' && TicTacT.place[2] == x){
                 
@@ -607,9 +683,22 @@ public class TicTacT {
                     checkWin();
                     break;
                     
+                                } else{ if(TicTacT.place[2] == '_'){
+                    TicTacT.place[2] = TicTacT.opp;
+                    break;
+                } else if(TicTacT.place[5] == '_'){
+                    TicTacT.place[5] = TicTacT.opp;
+                    break;
+                } else if(TicTacT.place[8] == '_'){
+                    TicTacT.place[8] = TicTacT.opp;
+                    break;
+                }
                 } 
             
             } else{
+                    
+                    // for avoiding debug
+                    System.out.println("last opp move choice");
 
                 int x = rng(0,8);
             
@@ -625,10 +714,14 @@ public class TicTacT {
                     break;
                     
                 }
+
             
             }
 
             } else {
+                
+                // for avoiding debug
+//                System.out.println("from opp move to check win");
                 
             checkWin();
             break;
@@ -648,7 +741,7 @@ public class TicTacT {
             Scanner sc = new Scanner(System.in);
             TicTacT.pvp = sc.next();
             
-            if(!"_".equals(TicTacT.pvp)){
+            if("y".equals(TicTacT.pvp) || "n".equals(TicTacT.pvp)){
                 break;
             }
         
@@ -658,6 +751,9 @@ public class TicTacT {
     }
 
     public static void checkWin() {
+        
+        // for avoiding debuging
+//        System.out.println("check win");
         
         // decide to pvp or not to
         if("_".equals(TicTacT.pvp)){
@@ -751,13 +847,24 @@ public class TicTacT {
         // if no tie then start game by player move
         }
         else{
+            
+            if(TicTacT.place[0] != '_' && TicTacT.place[1] != '_' && TicTacT.place[2] != '_' && TicTacT.place[3] != '_' && TicTacT.place[4] != '_' && TicTacT.place[5] != '_' && TicTacT.place[6] != '_' && TicTacT.place[7] != '_' && TicTacT.place[8] != '_'){
+            System.out.println("TIE!!!");
+            drawBoard();
+            playAgain();
+        } else{
+            
             playerMove();
+            }
         }
 
     }
     
         public static void checkWinCheckOnly() {
-        
+            
+            // for avoiding debuging
+//            System.out.println("Checking win only");
+            
         // decide to pvp or not to
         if("_".equals(TicTacT.pvp)){
         pvpOrPve();
@@ -847,6 +954,12 @@ public class TicTacT {
             playAgain();
             System.out.println("\n\n");
             
+        }
+        
+        if(TicTacT.place[0] != '_' && TicTacT.place[1] != '_' && TicTacT.place[2] != '_' && TicTacT.place[3] != '_' && TicTacT.place[4] != '_' && TicTacT.place[5] != '_' && TicTacT.place[6] != '_' && TicTacT.place[7] != '_' && TicTacT.place[8] != '_'){
+            System.out.println("TIE!!!");
+            drawBoard();
+            playAgain();
         }
 
     }

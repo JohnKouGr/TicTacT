@@ -456,7 +456,7 @@ public class TicTacT {
                 if (TicTacT.place[0] != TicTacT.team && TicTacT.place[1] != TicTacT.team && TicTacT.place[2] != TicTacT.team) {
                     
                     // for avoiding debug
-                    System.out.println("first choice");
+//                    System.out.println("first choice");
                     
                     int x = rng(0,2);
                 
@@ -476,7 +476,7 @@ public class TicTacT {
             } else if (TicTacT.place[3] != TicTacT.team && TicTacT.place[4] != TicTacT.team && TicTacT.place[5] != TicTacT.team){
                 
                 // for avoiding debug
-                    System.out.println("second choice");
+//                    System.out.println("second choice");
                 
                     int x = rng(3,5);
                 
@@ -496,7 +496,7 @@ public class TicTacT {
             } else if (TicTacT.place[6] != TicTacT.team && TicTacT.place[7] != TicTacT.team && TicTacT.place[8] != TicTacT.team){
                 
                 // for avoiding debug
-                    System.out.println("third choice");
+//                    System.out.println("third choice");
                 
                 int x = rng(6,8);
                 
@@ -516,7 +516,7 @@ public class TicTacT {
             } else if (TicTacT.place[0] != TicTacT.team && TicTacT.place[4] != TicTacT.team && TicTacT.place[8] != TicTacT.team){
                 
                 // for avoiding debug
-                    System.out.println("fourth choice");
+//                    System.out.println("fourth choice");
                 
                 int x = rng(0,8);
                 
@@ -553,7 +553,7 @@ public class TicTacT {
             } else if (TicTacT.place[1] != TicTacT.team && TicTacT.place[4] != TicTacT.team && TicTacT.place[7] != TicTacT.team){
                 
                 // for avoiding debug
-                    System.out.println("fifth choice");
+//                    System.out.println("fifth choice");
                 
                 int x = rng(1,7);
                 
@@ -589,7 +589,7 @@ public class TicTacT {
             } else if (TicTacT.place[2] != TicTacT.team && TicTacT.place[4] != TicTacT.team && TicTacT.place[6] != TicTacT.team){
                 
                 // for avoiding debug
-                    System.out.println("sixth choice");
+//                    System.out.println("sixth choice");
                 
                 int x = rng(2,6);
                 
@@ -625,7 +625,7 @@ public class TicTacT {
             } else if (TicTacT.place[0] != TicTacT.team && TicTacT.place[3] != TicTacT.team && TicTacT.place[6] != TicTacT.team){
                 
                 // for avoiding debug
-                    System.out.println("seventh choice");
+//                    System.out.println("seventh choice");
                 
                 int x = rng(0,6);
                 
@@ -661,7 +661,7 @@ public class TicTacT {
             } else if (TicTacT.place[2] != TicTacT.team && TicTacT.place[5] != TicTacT.team && TicTacT.place[8] != TicTacT.team){
                 
                 // for avoiding debug
-                    System.out.println("eighth choice");
+//                    System.out.println("eighth choice");
                 
                 int x = rng(2,8);
                 
@@ -698,7 +698,7 @@ public class TicTacT {
             } else{
                     
                     // for avoiding debug
-                    System.out.println("last opp move choice");
+//                    System.out.println("last opp move choice");
 
                 int x = rng(0,8);
             
@@ -844,14 +844,15 @@ public class TicTacT {
             playAgain();
             System.out.println("\n\n");
             
-        // if no tie then start game by player move
+        // if tie or start player move
         }
         else{
             
             if(TicTacT.place[0] != '_' && TicTacT.place[1] != '_' && TicTacT.place[2] != '_' && TicTacT.place[3] != '_' && TicTacT.place[4] != '_' && TicTacT.place[5] != '_' && TicTacT.place[6] != '_' && TicTacT.place[7] != '_' && TicTacT.place[8] != '_'){
-            System.out.println("TIE!!!");
+            System.out.println("\nTIE!!!");
             drawBoard();
             playAgain();
+            System.out.println("\n\n");
         } else{
             
             playerMove();
@@ -957,9 +958,10 @@ public class TicTacT {
         }
         
         if(TicTacT.place[0] != '_' && TicTacT.place[1] != '_' && TicTacT.place[2] != '_' && TicTacT.place[3] != '_' && TicTacT.place[4] != '_' && TicTacT.place[5] != '_' && TicTacT.place[6] != '_' && TicTacT.place[7] != '_' && TicTacT.place[8] != '_'){
-            System.out.println("TIE!!!");
+            System.out.println("\nTIE!!!");
             drawBoard();
             playAgain();
+            System.out.println("\n\n");
         }
 
     }
